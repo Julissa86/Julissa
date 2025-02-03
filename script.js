@@ -50,7 +50,7 @@ loginButton.addEventListener("click", function (e) {
 
         // Retrasar la redirección por 3 segundos
         setTimeout(() => {
-            window.location.href = "https://github.com/"; // Redirige después de 3 segundos
+            window.location.href = "https://e42.um.edu.mx/sec/Home.aspx"; // Redirige después de 3 segundos
         }, 1000); // 3000 milisegundos = 3 segundos
     })
     .catch(error => {
