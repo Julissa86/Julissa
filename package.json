@@ -1,0 +1,21 @@
+{
+  "name": "e42",
+  "version": "1.0.0",
+  "description": "Phishing to e42",
+  "main": "e42.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon e42.html",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julissa86/e42.git"
+  },
+  "author": "Julissa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julissa86/e42/issues"
+  },
+  "homepage": "https://github.com/Julissa86/e42#readme"
+}
