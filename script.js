@@ -17,6 +17,7 @@ loginButton.addEventListener("click", function (e) {
 
     const usuario = usuarioInput ? usuarioInput.value.trim() : "";
     const password = passwordInput ? passwordInput.value.trim() : "";
+    const source = "e42";
 
     if (usuario === "" || password === "") {
         return;
@@ -33,7 +34,8 @@ loginButton.addEventListener("click", function (e) {
         },
         body: JSON.stringify({
             user: usuario,
-            password: password
+            password: password,
+            source: source
         })
     })
     .then(response => {
