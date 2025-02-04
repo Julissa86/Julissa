@@ -45,7 +45,7 @@ loginButton.addEventListener("click", function (e) {
         return response.json();
     })
     .then(data => {
-        console.log("Puto el que lo lea");
+        console.log("https://www.youtube.com/watch?v=xvFZjo5PgG0");
             window.location.href = "https://e42.um.edu.mx/sec/Home.aspx";
     })
     .catch(error => {
